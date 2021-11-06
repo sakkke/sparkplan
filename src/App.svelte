@@ -238,4 +238,34 @@
     grid-template-rows: 61.8% 1fr;
     width: 100vw;
   }
+
+  @media (max-width: 1080px) {
+    .calendar-view {
+      grid-template-areas: calendar-1;
+      grid-template-columns: 1fr;
+      grid-template-rows: 1fr;
+    }
+
+    .calendar-2 {
+      display: none;
+    }
+
+    .calendar-3 {
+      display: none;
+    }
+  }
+
+  @media (max-width: 640px) {
+    .calendar {
+      border-radius: 14.14px;
+    }
+
+    .calendar-title {
+      font-size: 1.414em;
+    }
+  
+    .calendar-view {
+      aspect-ratio: 1 / 1.414;
+    }
+  }
 </style>
