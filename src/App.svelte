@@ -22,10 +22,18 @@
       return Calendar.getWeek(this.firstDateOfWeek)
     }
 
+    nextMonth () {
+      this.date.setMonth(this.date.getMonth() + 1)
+    }
+
     nextNMonth (n) {
       const cloned = new Date(this.date.getTime())
       cloned.setMonth(cloned.getMonth() + n)
       return new Calendar(cloned)
+    }
+
+    previousMonth () {
+      this.date.setMonth(this.date.getMonth() - 1)
     }
 
     static getFirstDateOfMonth (date) {
@@ -63,7 +71,7 @@
     }
   }
 
-  const calendar = new Calendar(new Date())
+  let calendar = new Calendar(new Date())
   const days = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat']
   const months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December']
 </script>
@@ -71,7 +79,17 @@
 <main>
   <div class="calendar-view">
     <div class="calendar calendar-1">
-      <div class="calendar-head">{months[calendar.date.getMonth()]} {calendar.date.getFullYear()}</div>
+      <div class="calendar-head">
+        <button class="calendar-previous" on:click={() => {
+          calendar.previousMonth()
+          calendar = calendar
+        }}>&lt;</button>
+        <div class="calendar-title">{months[calendar.date.getMonth()]} {calendar.date.getFullYear()}</div>
+        <button class="calendar-next" on:click={() => {
+          calendar.nextMonth()
+          calendar = calendar
+        }}>&gt;</button>
+      </div>
       <div class="calendar-days">
         {#each days as day}
         <div class="calendar-day">{day}</div>
@@ -91,7 +109,17 @@
       </div>
     </div>
     <div class="calendar calendar-2">
-      <div class="calendar-head">{months[calendar.nextNMonth(1).date.getMonth()]} {calendar.nextNMonth(1).date.getFullYear()}</div>
+      <div class="calendar-head">
+        <button class="calendar-previous" on:click={() => {
+          calendar.previousMonth()
+          calendar = calendar
+        }}>&lt;</button>
+        <div class="calendar-title">{months[calendar.nextNMonth(1).date.getMonth()]} {calendar.nextNMonth(1).date.getFullYear()}</div>
+        <button class="calendar-next" on:click={() => {
+          calendar.nextMonth()
+          calendar = calendar
+        }}>&gt;</button>
+      </div>
       <div class="calendar-days">
         {#each days as day}
         <div class="calendar-day">{day}</div>
@@ -111,7 +139,17 @@
       </div>
     </div>
     <div class="calendar calendar-3">
-      <div class="calendar-head">{months[calendar.nextNMonth(2).date.getMonth()]} {calendar.nextNMonth(2).date.getFullYear()}</div>
+      <div class="calendar-head">
+        <button class="calendar-previous" on:click={() => {
+          calendar.previousMonth()
+          calendar = calendar
+        }}>&lt;</button>
+        <div class="calendar-title">{months[calendar.nextNMonth(2).date.getMonth()]} {calendar.nextNMonth(2).date.getFullYear()}</div>
+        <button class="calendar-next" on:click={() => {
+          calendar.nextMonth()
+          calendar = calendar
+        }}>&gt;</button>
+      </div>
       <div class="calendar-days">
         {#each days as day}
         <div class="calendar-day">{day}</div>
@@ -216,8 +254,21 @@
 
   .calendar-head {
     background-color: var(--gray-200);
+    display: flex;
     font-size: 1.618em;
-    text-align: center;
+  }
+
+  .calendar-head button {
+    background-color: transparent;
+    border: none;
+  }
+
+  .calendar-next {
+    margin-right: 1em;
+  }
+
+  .calendar-previous {
+    margin-left: 1em;
   }
 
   .calendar-saturday {
@@ -226,6 +277,11 @@
 
   .calendar-sunday {
     background-color: var(--red-100);
+  }
+
+  .calendar-title {
+    flex: 1;
+    text-align: center;
   }
 
   .calendar-view {
