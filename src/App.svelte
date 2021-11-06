@@ -71,7 +71,7 @@
 <main>
   <div class="calendar-view">
     <div class="calendar calendar-1">
-      <div class="calendar-title">{months[calendar.date.getMonth()]} {calendar.date.getFullYear()}</div>
+      <div class="calendar-head">{months[calendar.date.getMonth()]} {calendar.date.getFullYear()}</div>
       <div class="calendar-days">
         {#each days as day}
         <div class="calendar-day">{day}</div>
@@ -91,7 +91,7 @@
       </div>
     </div>
     <div class="calendar calendar-2">
-      <div class="calendar-title">{months[calendar.nextNMonth(1).date.getMonth()]} {calendar.nextNMonth(1).date.getFullYear()}</div>
+      <div class="calendar-head">{months[calendar.nextNMonth(1).date.getMonth()]} {calendar.nextNMonth(1).date.getFullYear()}</div>
       <div class="calendar-days">
         {#each days as day}
         <div class="calendar-day">{day}</div>
@@ -111,7 +111,7 @@
       </div>
     </div>
     <div class="calendar calendar-3">
-      <div class="calendar-title">{months[calendar.nextNMonth(2).date.getMonth()]} {calendar.nextNMonth(2).date.getFullYear()}</div>
+      <div class="calendar-head">{months[calendar.nextNMonth(2).date.getMonth()]} {calendar.nextNMonth(2).date.getFullYear()}</div>
       <div class="calendar-days">
         {#each days as day}
         <div class="calendar-day">{day}</div>
@@ -214,18 +214,18 @@
     display: flex;
   }
 
+  .calendar-head {
+    background-color: var(--gray-200);
+    font-size: 1.618em;
+    text-align: center;
+  }
+
   .calendar-saturday {
     background-color: var(--indigo-100);
   }
 
   .calendar-sunday {
     background-color: var(--red-100);
-  }
-
-  .calendar-title {
-    background-color: var(--gray-200);
-    font-size: 1.618em;
-    text-align: center;
   }
 
   .calendar-view {
@@ -260,7 +260,7 @@
       border-radius: 14.14px;
     }
 
-    .calendar-title {
+    .calendar-head {
       font-size: 1.414em;
     }
   
