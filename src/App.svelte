@@ -273,8 +273,13 @@
   }
 
   .calendar-head button {
-    background-color: transparent;
-    border: none;
+    background-image: linear-gradient(var(--gray-100), #fff, var(--gray-100));
+    border: 1px solid var(--gray-300);
+    border-radius: 100%;
+    height: 3.236em;
+    margin-bottom: auto;
+    margin-top: auto;
+    width: 3.236em;
   }
 
   .calendar-next {
