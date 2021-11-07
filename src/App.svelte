@@ -1,4 +1,5 @@
 <script>
+  import '@fontsource/lato'
   import { fly } from 'svelte/transition'
 
   class Calendar {
@@ -234,6 +235,7 @@
   }
 
   .calendar-date {
+    font-family: Lato;
   }
 
   .calendar-date-border-bottom {
@@ -263,6 +265,7 @@
   .calendar-head {
     background-color: var(--gray-200);
     display: flex;
+    font-family: Lato;
     font-size: 1.618em;
   }
 
