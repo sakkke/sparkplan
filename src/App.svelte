@@ -254,6 +254,7 @@
 
   .calendar-day {
     flex: 1;
+    font-family: Lato;
     font-weight: bold;
     text-align: center;
   }
