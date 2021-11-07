@@ -252,16 +252,16 @@
   }
 
   .calendar-day {
-    background-color: var(--gray-100);
-    border-bottom: 1px solid var(--gray-300);
     flex: 1;
     font-weight: bold;
-    padding: 0.25em;
     text-align: center;
   }
 
   .calendar-days {
+    background-color: var(--gray-100);
+    border-bottom: 1px solid var(--gray-300);
     display: flex;
+    padding: 0.25em;
   }
 
   .calendar-head {
