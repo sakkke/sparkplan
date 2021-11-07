@@ -81,112 +81,118 @@
 
 <main>
   <div class="calendar-view">
-    <div class="calendar calendar-1">
-      <div class="calendar-head">
-        <button class="calendar-previous" on:click={() => {
-          calendar.previousMonth()
-          calendar = calendar
-        }}>
-          <span>&lt;</span>
-        </button>
-        <div class="calendar-title">{months[calendar.date.getMonth()]} {calendar.date.getFullYear()}</div>
-        <button class="calendar-next" on:click={() => {
-          calendar.nextMonth()
-          calendar = calendar
-        }}>
-          <span>&gt;</span>
-        </button>
-      </div>
-      <div class="calendar-days">
-        {#each days as day}
-        <div class="calendar-day">{day}</div>
-        {/each}
-      </div>
-      <div class="calendar-body">
-        {#each calendar.sixWeeks as date, i(date)}
-        <div
-          class="calendar-date"
-          class:calendar-date-border-bottom={i < 35}
-          class:calendar-date-border-right={(i + 1) % 7 !== 0}
-          class:calendar-date-text-gray={date.getMonth() !== calendar.date.getMonth()}
-          class:calendar-saturday={(i + 1) % 7 === 0}
-          class:calendar-sunday={i % 7 === 0}
-          in:fly={{ delay: 500 + (250 / 21) * i, duration: 500, x: -200 * Math.sin(i), y: 200 * Math.cos(i) }}
-          out:fly={{ delay: (250 / 21) * i, duration: 500, x: 200 * Math.sin(i), y: -200 * Math.cos(i) }}
-        >{date.getDate()}</div>
-        {/each}
-      </div>
-    </div>
-    <div class="calendar calendar-2">
-      <div class="calendar-head">
-        <button class="calendar-previous" on:click={() => {
-          calendar.previousMonth()
-          calendar = calendar
-        }}>
-          <span>&lt;</span>
-        </button>
-        <div class="calendar-title">{months[calendar.nextNMonth(1).date.getMonth()]} {calendar.nextNMonth(1).date.getFullYear()}</div>
-        <button class="calendar-next" on:click={() => {
-          calendar.nextMonth()
-          calendar = calendar
-        }}>
-          <span>&gt;</span>
-        </button>
-      </div>
-      <div class="calendar-days">
-        {#each days as day}
-        <div class="calendar-day">{day}</div>
-        {/each}
-      </div>
-      <div class="calendar-body">
-        {#each calendar.nextNMonth(1).sixWeeks as date, i(date)}
-        <div
-          class="calendar-date"
-          class:calendar-date-border-bottom={i < 35}
-          class:calendar-date-border-right={(i + 1) % 7 !== 0}
-          class:calendar-date-text-gray={date.getMonth() !== calendar.nextNMonth(1).date.getMonth()}
-          class:calendar-saturday={(i + 1) % 7 === 0}
-          class:calendar-sunday={i % 7 === 0}
-          in:fly={{ delay: 500 + (250 / 21) * i, duration: 500, x: -200 * Math.sin(i), y: 200 * Math.cos(i) }}
-          out:fly={{ delay: (250 / 21) * i, duration: 500, x: 200 * Math.sin(i), y: -200 * Math.cos(i) }}
-        >{date.getDate()}</div>
-        {/each}
+    <div class="calendar-1">
+      <div class="calendar">
+        <div class="calendar-head">
+          <button class="calendar-previous" on:click={() => {
+            calendar.previousMonth()
+            calendar = calendar
+          }}>
+            <span>&lt;</span>
+          </button>
+          <div class="calendar-title">{months[calendar.date.getMonth()]} {calendar.date.getFullYear()}</div>
+          <button class="calendar-next" on:click={() => {
+            calendar.nextMonth()
+            calendar = calendar
+          }}>
+            <span>&gt;</span>
+          </button>
+        </div>
+        <div class="calendar-days">
+          {#each days as day}
+          <div class="calendar-day">{day}</div>
+          {/each}
+        </div>
+        <div class="calendar-body">
+          {#each calendar.sixWeeks as date, i(date)}
+          <div
+            class="calendar-date"
+            class:calendar-date-border-bottom={i < 35}
+            class:calendar-date-border-right={(i + 1) % 7 !== 0}
+            class:calendar-date-text-gray={date.getMonth() !== calendar.date.getMonth()}
+            class:calendar-saturday={(i + 1) % 7 === 0}
+            class:calendar-sunday={i % 7 === 0}
+            in:fly={{ delay: 500 + (250 / 21) * i, duration: 500, x: -200 * Math.sin(i), y: 200 * Math.cos(i) }}
+            out:fly={{ delay: (250 / 21) * i, duration: 500, x: 200 * Math.sin(i), y: -200 * Math.cos(i) }}
+          >{date.getDate()}</div>
+          {/each}
+        </div>
       </div>
     </div>
-    <div class="calendar calendar-3">
-      <div class="calendar-head">
-        <button class="calendar-previous" on:click={() => {
-          calendar.previousMonth()
-          calendar = calendar
-        }}>
-          <span>&lt;</span>
-        </button>
-        <div class="calendar-title">{months[calendar.nextNMonth(2).date.getMonth()]} {calendar.nextNMonth(2).date.getFullYear()}</div>
-        <button class="calendar-next" on:click={() => {
-          calendar.nextMonth()
-          calendar = calendar
-        }}>
-          <span>&gt;</span>
-        </button>
+    <div class="calendar-2">
+      <div class="calendar">
+        <div class="calendar-head">
+          <button class="calendar-previous" on:click={() => {
+            calendar.previousMonth()
+            calendar = calendar
+          }}>
+            <span>&lt;</span>
+          </button>
+          <div class="calendar-title">{months[calendar.nextNMonth(1).date.getMonth()]} {calendar.nextNMonth(1).date.getFullYear()}</div>
+          <button class="calendar-next" on:click={() => {
+            calendar.nextMonth()
+            calendar = calendar
+          }}>
+            <span>&gt;</span>
+          </button>
+        </div>
+        <div class="calendar-days">
+          {#each days as day}
+          <div class="calendar-day">{day}</div>
+          {/each}
+        </div>
+        <div class="calendar-body">
+          {#each calendar.nextNMonth(1).sixWeeks as date, i(date)}
+          <div
+            class="calendar-date"
+            class:calendar-date-border-bottom={i < 35}
+            class:calendar-date-border-right={(i + 1) % 7 !== 0}
+            class:calendar-date-text-gray={date.getMonth() !== calendar.nextNMonth(1).date.getMonth()}
+            class:calendar-saturday={(i + 1) % 7 === 0}
+            class:calendar-sunday={i % 7 === 0}
+            in:fly={{ delay: 500 + (250 / 21) * i, duration: 500, x: -200 * Math.sin(i), y: 200 * Math.cos(i) }}
+            out:fly={{ delay: (250 / 21) * i, duration: 500, x: 200 * Math.sin(i), y: -200 * Math.cos(i) }}
+          >{date.getDate()}</div>
+          {/each}
+        </div>
       </div>
-      <div class="calendar-days">
-        {#each days as day}
-        <div class="calendar-day">{day}</div>
-        {/each}
-      </div>
-      <div class="calendar-body">
-        {#each calendar.nextNMonth(2).sixWeeks as date, i(date)}
-        <div
-          class="calendar-date"
-          class:calendar-date-border-bottom={i < 35}
-          class:calendar-date-border-right={(i + 1) % 7 !== 0}
-          class:calendar-date-text-gray={date.getMonth() !== calendar.nextNMonth(2).date.getMonth()}
-          class:calendar-saturday={(i + 1) % 7 === 0}
-          class:calendar-sunday={i % 7 === 0}
-          in:fly={{ delay: 500 + (250 / 21) * i, duration: 500, x: -200 * Math.sin(i), y: 200 * Math.cos(i) }}
-          out:fly={{ delay: (250 / 21) * i, duration: 500, x: 200 * Math.sin(i), y: -200 * Math.cos(i) }}
-        >{date.getDate()}</div>
-        {/each}
+    </div>
+    <div class="calendar-3">
+      <div class="calendar">
+        <div class="calendar-head">
+          <button class="calendar-previous" on:click={() => {
+            calendar.previousMonth()
+            calendar = calendar
+          }}>
+            <span>&lt;</span>
+          </button>
+          <div class="calendar-title">{months[calendar.nextNMonth(2).date.getMonth()]} {calendar.nextNMonth(2).date.getFullYear()}</div>
+          <button class="calendar-next" on:click={() => {
+            calendar.nextMonth()
+            calendar = calendar
+          }}>
+            <span>&gt;</span>
+          </button>
+        </div>
+        <div class="calendar-days">
+          {#each days as day}
+          <div class="calendar-day">{day}</div>
+          {/each}
+        </div>
+        <div class="calendar-body">
+          {#each calendar.nextNMonth(2).sixWeeks as date, i(date)}
+          <div
+            class="calendar-date"
+            class:calendar-date-border-bottom={i < 35}
+            class:calendar-date-border-right={(i + 1) % 7 !== 0}
+            class:calendar-date-text-gray={date.getMonth() !== calendar.nextNMonth(2).date.getMonth()}
+            class:calendar-saturday={(i + 1) % 7 === 0}
+            class:calendar-sunday={i % 7 === 0}
+            in:fly={{ delay: 500 + (250 / 21) * i, duration: 500, x: -200 * Math.sin(i), y: 200 * Math.cos(i) }}
+            out:fly={{ delay: (250 / 21) * i, duration: 500, x: 200 * Math.sin(i), y: -200 * Math.cos(i) }}
+          >{date.getDate()}</div>
+          {/each}
+        </div>
       </div>
     </div>
   </div>
@@ -218,23 +224,26 @@
     border-radius: 16.18px;
     display: flex;
     flex-direction: column;
-    margin: 1em;
+    height: 100%;
     overflow: hidden;
   }
 
   .calendar-1 {
     grid-area: calendar-1;
+    margin: 1em;
     margin-right: 0.5em;
   }
 
   .calendar-2 {
     grid-area: calendar-2;
+    margin: 1em;
     margin-bottom: 0.5em;
     margin-left: 0.5em;
   }
 
   .calendar-3 {
     grid-area: calendar-3;
+    margin: 1em;
     margin-left: 0.5em;
     margin-top: 0.5em;
   }
