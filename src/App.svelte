@@ -311,7 +311,7 @@
     width: 100vw;
   }
 
-  @media (max-width: 1080px) {
+  @media (max-width: 768px) {
     .calendar-view {
       grid-template-areas: calendar-1;
       grid-template-columns: 1fr;
