@@ -66,6 +66,7 @@
   $: calendar = new Calendar(date)
   const days = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat']
   const months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December']
+  const now = new Date()
 </script>
 
 <div class="calendar">
@@ -98,6 +99,10 @@
       class:calendar-date-text-gray={date.getMonth() !== calendar.date.getMonth()}
       class:calendar-saturday={(i + 1) % 7 === 0}
       class:calendar-sunday={i % 7 === 0}
+      class:calendar-today={
+        now.getMonth() === date.getMonth() &&
+        now.getDate() === date.getDate()
+      }
       in:fly={{ delay: 500 + (250 / 21) * i, duration: 500, x: -200 * Math.sin(i), y: 200 * Math.cos(i) }}
       out:fly={{ delay: (250 / 21) * i, duration: 500, x: 200 * Math.sin(i), y: -200 * Math.cos(i) }}
     >{date.getDate()}</div>
@@ -114,6 +119,7 @@
     --gray-900: #0F172A;
     --indigo-100: #E0E7FF;
     --red-100: #FEE2E2;
+    --yellow-100: #FEF3C7;
   }
 
   .calendar {
@@ -213,6 +219,10 @@
     padding-bottom: 0.5em;
     padding-top: 0.5em;
     text-align: center;
+  }
+
+  .calendar-today {
+    background-color: var(--yellow-100);
   }
 
   @media (max-width: 640px) {
