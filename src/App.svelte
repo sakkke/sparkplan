@@ -265,7 +265,7 @@
   }
 
   .calendar-head {
-    background-color: var(--gray-200);
+    background-image: linear-gradient(var(--gray-200), var(--gray-100), var(--gray-200));
     display: flex;
     font-family: Lato;
     font-size: 1.618em;
