@@ -236,6 +236,7 @@
 
   .calendar-date {
     font-family: Lato;
+    padding: 0.25em;
   }
 
   .calendar-date-border-bottom {
@@ -255,6 +256,7 @@
     border-bottom: 1px solid var(--gray-300);
     flex: 1;
     font-weight: bold;
+    padding: 0.25em;
     text-align: center;
   }
 
@@ -292,6 +294,8 @@
 
   .calendar-title {
     flex: 1;
+    padding-bottom: 0.5em;
+    padding-top: 0.5em;
     text-align: center;
   }
 
