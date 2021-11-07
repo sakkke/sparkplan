@@ -269,14 +269,13 @@
   .calendar-head {
     background-image: linear-gradient(var(--gray-200), var(--gray-100), var(--gray-200));
     display: flex;
-    font-family: Lato;
-    font-size: 1.618em;
   }
 
   .calendar-head button {
     background-image: linear-gradient(var(--gray-100), #fff, var(--gray-100));
     border: 1px solid var(--gray-300);
     border-radius: 100%;
+    font-family: Lato;
     height: 3.236em;
     margin-bottom: auto;
     margin-top: auto;
@@ -301,6 +300,8 @@
 
   .calendar-title {
     flex: 1;
+    font-family: Lato;
+    font-size: 1.618em;
     padding-bottom: 0.5em;
     padding-top: 0.5em;
     text-align: center;
