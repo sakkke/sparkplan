@@ -1,4 +1,6 @@
 <script>
+  import { fly } from 'svelte/transition'
+
   class Calendar {
     constructor (date) {
       this.date = date
@@ -96,7 +98,7 @@
         {/each}
       </div>
       <div class="calendar-body">
-        {#each calendar.sixWeeks as date, i}
+        {#each calendar.sixWeeks as date, i(date)}
         <div
           class="calendar-date"
           class:calendar-date-border-bottom={i < 35}
@@ -104,6 +106,8 @@
           class:calendar-date-text-gray={date.getMonth() !== calendar.date.getMonth()}
           class:calendar-saturday={(i + 1) % 7 === 0}
           class:calendar-sunday={i % 7 === 0}
+          in:fly={{ delay: 500 + (250 / 21) * i, duration: 500, x: -200 * Math.sin(i), y: 200 * Math.cos(i) }}
+          out:fly={{ delay: (250 / 21) * i, duration: 500, x: 200 * Math.sin(i), y: -200 * Math.cos(i) }}
         >{date.getDate()}</div>
         {/each}
       </div>
@@ -126,7 +130,7 @@
         {/each}
       </div>
       <div class="calendar-body">
-        {#each calendar.nextNMonth(1).sixWeeks as date, i}
+        {#each calendar.nextNMonth(1).sixWeeks as date, i(date)}
         <div
           class="calendar-date"
           class:calendar-date-border-bottom={i < 35}
@@ -134,6 +138,8 @@
           class:calendar-date-text-gray={date.getMonth() !== calendar.nextNMonth(1).date.getMonth()}
           class:calendar-saturday={(i + 1) % 7 === 0}
           class:calendar-sunday={i % 7 === 0}
+          in:fly={{ delay: 500 + (250 / 21) * i, duration: 500, x: -200 * Math.sin(i), y: 200 * Math.cos(i) }}
+          out:fly={{ delay: (250 / 21) * i, duration: 500, x: 200 * Math.sin(i), y: -200 * Math.cos(i) }}
         >{date.getDate()}</div>
         {/each}
       </div>
@@ -156,7 +162,7 @@
         {/each}
       </div>
       <div class="calendar-body">
-        {#each calendar.nextNMonth(2).sixWeeks as date, i}
+        {#each calendar.nextNMonth(2).sixWeeks as date, i(date)}
         <div
           class="calendar-date"
           class:calendar-date-border-bottom={i < 35}
@@ -164,6 +170,8 @@
           class:calendar-date-text-gray={date.getMonth() !== calendar.nextNMonth(2).date.getMonth()}
           class:calendar-saturday={(i + 1) % 7 === 0}
           class:calendar-sunday={i % 7 === 0}
+          in:fly={{ delay: 500 + (250 / 21) * i, duration: 500, x: -200 * Math.sin(i), y: 200 * Math.cos(i) }}
+          out:fly={{ delay: (250 / 21) * i, duration: 500, x: 200 * Math.sin(i), y: -200 * Math.cos(i) }}
         >{date.getDate()}</div>
         {/each}
       </div>
