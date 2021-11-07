@@ -86,12 +86,16 @@
         <button class="calendar-previous" on:click={() => {
           calendar.previousMonth()
           calendar = calendar
-        }}>&lt;</button>
+        }}>
+          <span>&lt;</span>
+        </button>
         <div class="calendar-title">{months[calendar.date.getMonth()]} {calendar.date.getFullYear()}</div>
         <button class="calendar-next" on:click={() => {
           calendar.nextMonth()
           calendar = calendar
-        }}>&gt;</button>
+        }}>
+          <span>&gt;</span>
+        </button>
       </div>
       <div class="calendar-days">
         {#each days as day}
@@ -118,12 +122,16 @@
         <button class="calendar-previous" on:click={() => {
           calendar.previousMonth()
           calendar = calendar
-        }}>&lt;</button>
+        }}>
+          <span>&lt;</span>
+        </button>
         <div class="calendar-title">{months[calendar.nextNMonth(1).date.getMonth()]} {calendar.nextNMonth(1).date.getFullYear()}</div>
         <button class="calendar-next" on:click={() => {
           calendar.nextMonth()
           calendar = calendar
-        }}>&gt;</button>
+        }}>
+          <span>&gt;</span>
+        </button>
       </div>
       <div class="calendar-days">
         {#each days as day}
@@ -150,12 +158,16 @@
         <button class="calendar-previous" on:click={() => {
           calendar.previousMonth()
           calendar = calendar
-        }}>&lt;</button>
+        }}>
+          <span>&lt;</span>
+        </button>
         <div class="calendar-title">{months[calendar.nextNMonth(2).date.getMonth()]} {calendar.nextNMonth(2).date.getFullYear()}</div>
         <button class="calendar-next" on:click={() => {
           calendar.nextMonth()
           calendar = calendar
-        }}>&gt;</button>
+        }}>
+          <span>&gt;</span>
+        </button>
       </div>
       <div class="calendar-days">
         {#each days as day}
@@ -272,14 +284,22 @@
   }
 
   .calendar-head button {
+    align-items: center;
     background-image: linear-gradient(var(--gray-100), #fff, var(--gray-100));
     border: 1px solid var(--gray-300);
     border-radius: 100%;
-    font-family: Lato;
+    display: flex;
     height: 3.236em;
+    justify-content: center;
     margin-bottom: auto;
     margin-top: auto;
     width: 3.236em;
+  }
+
+  .calendar-head button span {
+    color: var(--gray-400);
+    font-family: Lato;
+    font-size: 1.618em;
   }
 
   .calendar-next {
