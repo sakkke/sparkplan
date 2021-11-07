@@ -355,6 +355,10 @@
       grid-template-rows: 1fr;
     }
 
+    .calendar-1 {
+      margin-right: 1em;
+    }
+
     .calendar-2 {
       display: none;
     }
