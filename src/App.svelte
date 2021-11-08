@@ -64,22 +64,22 @@
   }
 
   @media (max-width: 768px) {
+    :global(.calendar-1) {
+      margin-right: 1em;
+    }
+
+    :global(.calendar-2) {
+      display: none;
+    }
+
+    :global(.calendar-3) {
+      display: none;
+    }
+
     .calendar-view {
       grid-template-areas: calendar-1;
       grid-template-columns: 1fr;
       grid-template-rows: 1fr;
-    }
-
-    .calendar-1 {
-      margin-right: 1em;
-    }
-
-    .calendar-2 {
-      display: none;
-    }
-
-    .calendar-3 {
-      display: none;
     }
   }
 
