@@ -16,15 +16,9 @@
 
 <main>
   <div class="calendar-view">
-    <div class="calendar-1">
-      <Calendar date={date1}></Calendar>
-    </div>
-    <div class="calendar-2">
-      <Calendar date={date2}></Calendar>
-    </div>
-    <div class="calendar-3">
-      <Calendar date={date3}></Calendar>
-    </div>
+    <Calendar class="calendar-1" date={date1}></Calendar>
+    <Calendar class="calendar-2" date={date2}></Calendar>
+    <Calendar class="calendar-3" date={date3}></Calendar>
   </div>
 </main>
 
@@ -33,29 +27,29 @@
     margin: 0;
   }
 
-  main {
-    height: 100vh;
-    width: 100vw;
-  }
-
-  .calendar-1 {
+  :global(.calendar-1) {
     grid-area: calendar-1;
     margin: 1em;
     margin-right: 0.5em;
   }
 
-  .calendar-2 {
+  :global(.calendar-2) {
     grid-area: calendar-2;
     margin: 1em;
     margin-bottom: 0.5em;
     margin-left: 0.5em;
   }
 
-  .calendar-3 {
+  :global(.calendar-3) {
     grid-area: calendar-3;
     margin: 1em;
     margin-left: 0.5em;
     margin-top: 0.5em;
+  }
+
+  main {
+    height: 100vh;
+    width: 100vw;
   }
 
   .calendar-view {

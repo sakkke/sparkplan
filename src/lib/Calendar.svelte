@@ -3,7 +3,10 @@
   import '@fontsource/lato'
   import { fly } from 'svelte/transition'
 
+  let klass = ''
+
   export let date
+  export { klass as class }
 
   class Calendar {
     constructor (date) {
@@ -69,7 +72,7 @@
   const now = new Date()
 </script>
 
-<div class="calendar">
+<div class="{klass} calendar">
   <div class="calendar-head">
     <button class="calendar-previous" on:click={() => {
       $currentMonth--
@@ -128,7 +131,6 @@
     color: var(--gray-900);
     display: flex;
     flex-direction: column;
-    height: 100%;
     overflow: hidden;
   }
 
