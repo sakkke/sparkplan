@@ -144,8 +144,14 @@
   }
 
   .calendar-date {
+    background-color: #fff;
     font-family: Lato;
     padding: 0.25em;
+    transition-duration: 500ms;
+  }
+
+  .calendar-date:hover {
+    filter: brightness(80%);
   }
 
   .calendar-date-border-bottom {
@@ -189,7 +195,12 @@
     justify-content: center;
     margin-bottom: auto;
     margin-top: auto;
+    transition-duration: 500ms;
     width: 3.236em;
+  }
+
+  .calendar-head button:hover {
+    filter: brightness(80%);
   }
 
   .calendar-head button span {
