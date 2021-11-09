@@ -80,7 +80,7 @@
     }}>
       <span>&lt;</span>
     </button>
-    <div class="calendar-title">{months[calendar.date.getMonth()]} {calendar.date.getFullYear()}</div>
+    <div class="calendar-title"><span class="calendar-title-month">{months[calendar.date.getMonth()]}</span> <span class="calendar-title-year">{calendar.date.getFullYear()}</span></div>
     <button class="calendar-next" on:click={() => {
       $currentMonth++
       calendar = calendar
@@ -231,6 +231,13 @@
     margin-bottom: auto;
     margin-top: auto;
     text-align: center;
+  }
+
+  .calendar-title-month {
+  }
+
+  .calendar-title-year {
+    font-size: calc(var(--ratio-b) * 0.5 * 1em);
   }
 
   .calendar-today {
