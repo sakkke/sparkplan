@@ -69,11 +69,11 @@
     }
 
     :global(.calendar-2) {
-      display: none;
+      display: none !important;
     }
 
     :global(.calendar-3) {
-      display: none;
+      display: none !important;
     }
 
     .calendar-view {
