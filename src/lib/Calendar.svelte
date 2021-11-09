@@ -243,6 +243,10 @@
       border-radius: 14.14px;
     }
 
+    .calendar-head button span {
+      font-size: 1.414em;
+    }
+
     .calendar-title {
       font-size: 1.414em;
     }
