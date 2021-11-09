@@ -127,7 +127,7 @@
 
   .calendar {
     border: 1px solid var(--gray-300);
-    border-radius: 16.18px;
+    border-radius: calc(var(--ratio-b) * 10 * 1px);
     color: var(--gray-900);
     display: flex;
     flex-direction: column;
@@ -192,12 +192,12 @@
     border: 1px solid var(--gray-300);
     border-radius: 100%;
     display: flex;
-    height: 3.236em;
+    height: calc(var(--ratio-b) * 2 * 1em);
     justify-content: center;
     margin-bottom: auto;
     margin-top: auto;
     transition-duration: 500ms;
-    width: 3.236em;
+    width: calc(var(--ratio-b) * 2 * 1em);
   }
 
   .calendar-head button:hover {
@@ -207,7 +207,7 @@
   .calendar-head button span {
     color: var(--gray-400);
     font-family: Lato;
-    font-size: 1.618em;
+    font-size: calc(var(--ratio-b) * 1em);
   }
 
   .calendar-next {
@@ -227,7 +227,7 @@
   .calendar-title {
     flex: 1;
     font-family: Lato;
-    font-size: 1.618em;
+    font-size: calc(var(--ratio-b) * 1em);
     margin-bottom: auto;
     margin-top: auto;
     text-align: center;
@@ -239,15 +239,15 @@
 
   @media (max-width: 640px) {
     .calendar {
-      border-radius: 14.14px;
+      border-radius: calc(var(--ratio-b-for-sm) * 10 * 1px);
     }
 
     .calendar-head button span {
-      font-size: 1.414em;
+      font-size: calc(var(--ratio-b-for-sm) * 1em);
     }
 
     .calendar-title {
-      font-size: 1.414em;
+      font-size: calc(var(--ratio-b-for-sm) * 1em);
     }
   }
 </style>

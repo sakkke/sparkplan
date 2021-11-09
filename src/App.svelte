@@ -23,6 +23,13 @@
 </main>
 
 <style>
+  :global(:root) {
+    --ratio-a: 1;
+    --ratio-b: 1.618;
+    --ratio-a-for-sm: 1;
+    --ratio-b-for-sm: 1.414;
+  }
+
   :global(body) {
     margin: 0;
   }
@@ -53,13 +60,13 @@
   }
 
   .calendar-view {
-    aspect-ratio: 1.618 / 1;
+    aspect-ratio: var(--ratio-b) / var(--ratio-a);
     display: grid;
     grid-template-areas:
       "calendar-1 calendar-2"
       "calendar-1 calendar-3";
-    grid-template-columns: 61.8% 1fr;
-    grid-template-rows: 61.8% 1fr;
+    grid-template-columns: calc(100 / var(--ratio-b) * 1%) 1fr;
+    grid-template-rows: calc(100 / var(--ratio-b) * 1%) 1fr;
     width: 100vw;
   }
 
@@ -85,7 +92,7 @@
 
   @media (max-width: 640px) {
     .calendar-view {
-      aspect-ratio: 1 / 1.414;
+      aspect-ratio: var(--ratio-a-for-sm) / var(--ratio-b-for-sm);
     }
   }
 </style>
