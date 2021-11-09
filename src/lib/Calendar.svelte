@@ -183,6 +183,7 @@
   .calendar-head {
     background-image: linear-gradient(var(--gray-200), var(--gray-100), var(--gray-200));
     display: flex;
+    padding: 0.5em;
   }
 
   .calendar-head button {
@@ -210,11 +211,9 @@
   }
 
   .calendar-next {
-    margin-right: 1em;
   }
 
   .calendar-previous {
-    margin-left: 1em;
   }
 
   .calendar-saturday {
@@ -229,8 +228,8 @@
     flex: 1;
     font-family: Lato;
     font-size: 1.618em;
-    padding-bottom: 0.5em;
-    padding-top: 0.5em;
+    margin-bottom: auto;
+    margin-top: auto;
     text-align: center;
   }
 
